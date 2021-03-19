@@ -64,6 +64,7 @@ function LineGraph() {
    const buildChartData = (data, casesType = 'cases') => {
        const chartData = []
        let lastDataPoint;
+       // We had to use the for in loop because the data is an object, not an array
        for (let date in data.cases) {
            if(lastDataPoint) {
                const newDataPoint = {
